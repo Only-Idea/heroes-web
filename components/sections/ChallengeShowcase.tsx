@@ -103,11 +103,11 @@ export default function ChallengeShowcase() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="challenges" className="relative min-h-screen bg-void py-20">
+    <section ref={sectionRef} id="challenges" aria-labelledby="challenges-title" className="relative min-h-screen bg-void py-20">
       {/* Section header */}
       <div className="mx-auto max-w-7xl px-6 pb-12 md:px-10">
         <p className="text-label text-coral">{t('label')}</p>
-        <h2 className="text-section text-ivory mt-4">{t('title')}</h2>
+        <h2 id="challenges-title" className="text-section text-ivory mt-4">{t('title')}</h2>
       </div>
 
       {/* Card track */}

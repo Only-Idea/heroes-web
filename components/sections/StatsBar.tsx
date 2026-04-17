@@ -58,10 +58,11 @@ export default function StatsBar() {
   return (
     <section
       ref={sectionRef}
+      aria-label={t('routes') + ' / ' + t('activities') + ' / ' + t('countries')}
       className="relative border-y border-y-transparent py-16 md:py-20"
       style={{ borderImage: 'var(--gradient-heroes) 1' }}
     >
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-around gap-10 px-6 md:flex-row md:gap-0">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-around gap-10 px-6 md:flex-row md:gap-0 md:px-10">
         {stats.map(({ key, suffix }, i) => (
           <div key={key} className="flex flex-col items-center gap-2 text-center">
             <span className="text-stat text-ivory">

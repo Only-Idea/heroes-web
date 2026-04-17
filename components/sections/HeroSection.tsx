@@ -76,6 +76,7 @@ export default function HeroSection() {
     <section
       ref={sectionRef}
       id="top"
+      aria-labelledby="hero-title"
       className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-void"
     >
       {/* 3D Orb — behind text */}
@@ -86,11 +87,11 @@ export default function HeroSection() {
       {/* Text overlay */}
       <div
         ref={contentRef}
-        className="relative z-10 flex flex-col items-center px-6 pointer-events-none"
+        className="relative z-10 flex flex-col items-center px-6 pointer-events-none md:px-10"
       >
         <p className="hero-stagger hero-stagger-label text-label text-stone">{t('label')}</p>
 
-        <h1 className="mt-6 text-center">
+        <h1 id="hero-title" className="mt-6 text-center">
           <span className="hero-stagger hero-stagger-title-1 block text-hero text-heroes-gradient">
             {t('titleLine1')}
           </span>

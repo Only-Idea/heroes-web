@@ -101,6 +101,7 @@ export default function FinalCTA() {
   return (
     <section
       ref={sectionRef}
+      aria-labelledby="cta-title"
       className="relative flex min-h-screen flex-col items-center justify-center bg-void px-6 py-20 text-center md:px-10"
     >
       {/* Gradient glow background */}
@@ -115,6 +116,7 @@ export default function FinalCTA() {
 
       <h2
         ref={headlineRef}
+        id="cta-title"
         className="text-section text-ivory relative z-10"
         style={{ opacity: 0 }}
       >

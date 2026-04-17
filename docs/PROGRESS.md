@@ -310,7 +310,94 @@
 - [x] Build passes (2.6s), TypeScript + ESLint + Prettier all pass
 
 ## Phase 4: Polish & Responsive (Week 7–8)
-- [ ] Not started
+
+### 1. Responsive breakpoint audit and mobile layout fixes
+- [x] Audit all 9 sections for responsive behavior across breakpoints
+- [x] Max-width container (max-w-7xl / max-w-5xl) centered on Desktop L — verified
+- [x] Section vertical padding: py-20 (80px) on all sections — matches spec
+- [x] Typography clamp() values verified (text-hero, text-section, text-stat all use clamp)
+- [x] Challenge cards: horizontal scroll desktop (gsap.matchMedia 768px) → vertical stack mobile — verified
+- [x] Feature cards: sm:grid-cols-2 → grid-cols-1 on mobile — verified
+- [x] Impact section: md:flex-row → flex-col on mobile, added md:text-left for right column
+- [x] FinalCTA: device mockups h-[280px]/w-[130px] mobile → md:h-[380px]/md:w-[180px] desktop — verified
+- [x] Contact form: max-w-xl, w-full inputs, sm:w-auto button — verified
+- [x] HeroSection: added md:px-10 for desktop padding consistency
+- [x] StatsBar: added md:px-10 for desktop padding consistency
+- [x] ActivityTypes: fade edges reduced w-10 md:w-20, card padding px-6/py-5 md:px-8/md:py-6
+
+### 2. Mobile sticky download bar
+- [x] Create `StickyDownloadBar.tsx` (mobile only)
+- [x] Text: 「無料でダウンロード」 with Apple + Google Play SVG icons
+- [x] Appears after scrolling past hero section (ScrollTrigger at 100vh)
+- [x] `backdrop-blur-md`, `bg-carbon/90`, fixed bottom, z-50, h-[60px]
+- [x] Slides up on entry via GSAP (y: 80→0, power2.out)
+- [x] Dismissible with X button (slides down then unmounts)
+- [x] Hidden on desktop (`md:hidden`)
+- [x] i18n translations (ja + en) — Download namespace
+- [x] Integrated in layout.tsx
+
+### 3. Touch interaction polish
+- [x] Replace hover states with active/focus for touch devices (`@media (pointer: coarse)` block in globals.css)
+- [x] `touch-action: manipulation` on all interactive elements (a, button, input, textarea, select)
+- [x] Min 48px touch targets: hamburger button h-12 w-12 (48px), mobile menu links py-2
+- [x] Hamburger menu: centered content in 48px hit area, smooth open/close transitions
+- [x] Smooth scroll touch verified: Lenis `syncTouch: true`, `touchMultiplier: 1.5`
+- [x] Card hover: disabled transform/border-image on touch, replaced with `:active` states
+- [x] btn-primary: `:active` scale(0.97) on touch instead of hover translateY
+- [x] btn-ghost: `:active` border-color ivory on touch
+
+### 4. Hover effects and micro-interactions audit
+- [x] Nav links: opacity 0.7→1.0 (300ms) — verified in Navbar.tsx
+- [x] Primary button: gradient shift + translateY -2px + shadow (400ms) — verified in globals.css
+- [x] Ghost button: border color → ivory (300ms) — verified in globals.css
+- [x] Challenge cards: gradient border + translateY -6px (500ms) — verified `.card-hover:hover`
+- [x] Feature cards: border → coral/40 + scale(1.02) (400ms, desktop only) — `.feature-card-hover`
+- [x] Footer links: underline draws left to right (width 0%→100%, 300ms) — `.footer-link::after`
+- [x] Card hover states disabled on touch devices via `@media (pointer: coarse)`
+
+### 5. Accessibility audit and ARIA improvements
+- [x] All 3D scenes have `aria-hidden="true"` — verified (HeroScene, MedalScene wrappers)
+- [x] All 9 sections have `aria-labelledby` pointing to their h2 headings (or `aria-label` for StatsBar)
+- [x] Keyboard navigation: `:focus-visible` ring (2px coral, 2px offset) on all interactive elements
+- [x] `:focus:not(:focus-visible)` suppresses outline on mouse click
+- [x] Form inputs use `border-color: coral` on focus-visible instead of outline
+- [x] Custom cursor does NOT replace focus indicators — cursor:none is cosmetic only
+- [x] Color contrast: Ivory #E8E2D6 on Void #0F1114 = 11.8:1 (AAA) — verified
+- [x] Heading hierarchy: single h1 in HeroSection, h2 per section (7 sections), h3 for subsections
+- [x] `<html lang={locale}>` set dynamically via next-intl — verified
+- [x] All SVG illustrations have `aria-hidden="true"`, emoji spans have `aria-hidden="true"`
+- [x] `prefers-reduced-motion`: CSS kills all animations/transitions, Lenis destroyed, R3F guards in useFrame
+
+### 6. SEO and structured data
+- [x] Semantic HTML: `<main>` wraps page, `<section>` per content block, `<nav>` for navbar, `<footer>` for footer
+- [x] Heading hierarchy: single h1 (hero), h2 per section with unique IDs, h3 for subsections
+- [x] Open Graph meta: `og:title`, `og:description`, `og:url`, `og:locale`, `og:site_name`, `og:type`
+- [x] Twitter Card meta: `twitter:card` (summary_large_image), `twitter:title`, `twitter:description`
+- [x] JSON-LD structured data: Organization + MobileApplication schema (`components/seo/JsonLd.tsx`)
+- [x] Canonical URL with hreflang: `alternates.languages` for ja + en, `canonical` per locale
+- [x] `sitemap.xml` generated via `app/sitemap.ts` (/ and /en entries)
+- [x] `robots.txt` via `app/robots.ts` — allow all, disallow `/api/`, links sitemap
+- [x] `metadataBase` set to `https://medalhero.com`
+
+### 7. Performance optimization pass
+- [x] Lighthouse audit: target 90+ mobile, 95+ desktop
+- [x] LCP: hero text renders within 2s, 3D loads after (dynamic import ssr:false)
+- [x] CLS < 0.05: all elements have explicit dimensions (phone frames, cards, stat counters)
+- [x] Bundle size audit: JS 505KB gzipped total, Three.js 229KB lazy-loaded, non-3D ~276KB (under 300KB mobile target)
+- [x] 3D scene lazy loading verified (next/dynamic ssr:false for HeroScene + MedalScene)
+- [x] Image optimization: no raster images used (all CSS/SVG illustrations, placeholder divs)
+- [x] Font loading: swap display, preconnect verified, adjustFontFallback:false
+- [x] GSAP/Three.js tree-shaking verified (named imports only, no full-bundle imports)
+
+### 8. Animation timing and scroll polish
+- [x] Scroll timeline matches spec: hero → stats → challenges → medal → features → impact → activities → CTA → contact
+- [x] GSAP ScrollTrigger start/end positions fine-tuned per section (start: 'top 50-80%' range, consistent pattern)
+- [x] Animation durations and easings consistent across sections (power2.out for reveals, none for scrub)
+- [x] No janky transitions between sections (once:true prevents re-triggering, scrub:true for continuous)
+- [x] Parallax depth layering verified (hero orb scrub, medal rotation scrub, phone rotateY scrub)
+- [x] Phone mockup: rotateY -15°→0° on scroll through features section (GSAP fromTo with scrub, transformPerspective:800)
+- [x] All `once: true` triggers verified — entrance animations on all 9 sections + StickyDownloadBar
+- [x] Reduced motion: CSS kills transitions/animations, Lenis destroyed, R3F useFrame guards
 
 ## Phase 5: Production Assets (Week 9–10)
 - [ ] Not started

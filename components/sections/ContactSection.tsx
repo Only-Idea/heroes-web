@@ -87,7 +87,7 @@ export default function ContactSection() {
   );
 
   return (
-    <section ref={sectionRef} id="contact" className="relative bg-carbon px-6 py-20 md:px-10">
+    <section ref={sectionRef} id="contact" aria-labelledby="contact-title" className="relative bg-carbon px-6 py-20 md:px-10">
       <div className="mx-auto max-w-xl">
         <div
           ref={(el) => {
@@ -97,7 +97,7 @@ export default function ContactSection() {
           style={{ opacity: 0 }}
         >
           <p className="text-label text-coral">{t('label')}</p>
-          <h2 className="text-section text-ivory mt-4">{t('title')}</h2>
+          <h2 id="contact-title" className="text-section text-ivory mt-4">{t('title')}</h2>
         </div>
 
         {submitted ? (

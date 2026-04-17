@@ -105,6 +105,7 @@ export default function ImpactSection() {
     <section
       ref={sectionRef}
       id="impact"
+      aria-labelledby="impact-title"
       className="relative min-h-screen bg-void px-6 py-20 md:px-10"
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-12 md:flex-row md:items-center md:gap-16">
@@ -170,9 +171,9 @@ export default function ImpactSection() {
         </div>
 
         {/* Right: Text content */}
-        <div ref={rightRef} className="flex-1" style={{ opacity: 0 }}>
+        <div ref={rightRef} className="flex-1 text-center md:text-left" style={{ opacity: 0 }}>
           <p className="text-label text-coral">{t('label')}</p>
-          <h2 className="text-section text-ivory mt-4">{t('title')}</h2>
+          <h2 id="impact-title" className="text-section text-ivory mt-4">{t('title')}</h2>
 
           <div className="mt-8 space-y-8">
             {/* Tree Care */}

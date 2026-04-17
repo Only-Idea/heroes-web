@@ -80,6 +80,10 @@
     "skiing": "Skiing",
     "wheelchair": "Wheelchair"
   },
+  "Download": {
+    "text": "Download for free",
+    "dismiss": "Close"
+  },
   "CTA": {
     "title": "Start your adventure.",
     "subtitle": "Download now and take the first step.",

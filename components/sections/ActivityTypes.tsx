@@ -68,24 +68,24 @@ export default function ActivityTypes() {
   const doubledActivities = [...activities, ...activities];
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-void py-20">
+    <section ref={sectionRef} aria-labelledby="activities-title" className="relative overflow-hidden bg-void py-20">
       {/* Section header */}
       <div ref={headerRef} className="mx-auto max-w-7xl px-6 pb-12 md:px-10" style={{ opacity: 0 }}>
         <p className="text-label text-coral">{t('label')}</p>
-        <h2 className="text-section text-ivory mt-4">{t('title')}</h2>
+        <h2 id="activities-title" className="text-section text-ivory mt-4">{t('title')}</h2>
       </div>
 
       {/* Infinite ribbon */}
       <div className="relative">
         {/* Fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20 bg-gradient-to-r from-void to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20 bg-gradient-to-l from-void to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-void to-transparent md:w-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-void to-transparent md:w-20" />
 
         <div ref={ribbonRef} className="flex w-max gap-6">
           {doubledActivities.map(({ key, icon }, i) => (
             <div
               key={`${key}-${i}`}
-              className="flex flex-shrink-0 flex-col items-center gap-3 rounded-2xl border border-border bg-carbon px-8 py-6 transition-colors duration-300 hover:border-coral/40"
+              className="flex flex-shrink-0 flex-col items-center gap-3 rounded-2xl border border-border bg-carbon px-6 py-5 transition-colors duration-300 hover:border-coral/40 md:px-8 md:py-6"
             >
               <span className="text-3xl" aria-hidden="true">
                 {icon}

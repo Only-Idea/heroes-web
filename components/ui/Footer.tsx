@@ -17,7 +17,7 @@ export default function Footer() {
             <li key={key}>
               <a
                 href="#"
-                className="text-footer text-stone transition-colors duration-300 hover:text-ivory"
+                className="footer-link text-footer text-stone transition-colors duration-300 hover:text-ivory"
               >
                 {t(key)}
               </a>
@@ -31,7 +31,7 @@ export default function Footer() {
             <a
               key={link.name}
               href={link.href}
-              className="text-footer text-stone transition-colors duration-300 hover:text-ivory"
+              className="footer-link text-footer text-stone transition-colors duration-300 hover:text-ivory"
               aria-label={link.name}
             >
               {link.name}

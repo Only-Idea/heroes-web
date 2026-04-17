@@ -51,7 +51,7 @@ export default function Navbar() {
 
       {/* Mobile hamburger */}
       <button
-        className="flex flex-col gap-1.5 md:hidden"
+        className="flex h-12 w-12 flex-col items-center justify-center gap-1.5 md:hidden"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Menu"
       >
@@ -73,7 +73,7 @@ export default function Navbar() {
             <a
               key={key}
               href={`#${key}`}
-              className="text-section text-ivory"
+              className="text-section text-ivory py-2"
               onClick={() => setMenuOpen(false)}
             >
               {t(key)}

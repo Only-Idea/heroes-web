@@ -61,6 +61,7 @@ export default function MedalShowcase() {
   return (
     <section
       ref={sectionRef}
+      aria-labelledby="medal-title"
       className="relative flex min-h-screen flex-col items-center justify-center bg-void px-6 py-20 md:flex-row md:gap-16 md:px-10"
     >
       {/* 3D Medal */}
@@ -75,7 +76,7 @@ export default function MedalShowcase() {
         style={{ opacity: 0 }}
       >
         <p className="text-label text-coral">{t('label')}</p>
-        <h2 className="text-section text-ivory mt-4">{t('title')}</h2>
+        <h2 id="medal-title" className="text-section text-ivory mt-4">{t('title')}</h2>
         <p className="text-body-lg mt-6 text-stone">{t('description')}</p>
       </div>
     </section>

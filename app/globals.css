@@ -266,6 +266,28 @@ body {
 }
 
 /* ============================================
+   FOCUS VISIBLE (keyboard navigation)
+   ============================================ */
+
+/* Global focus-visible ring — visible on keyboard nav, hidden on mouse/touch */
+:focus-visible {
+  outline: 2px solid var(--color-coral);
+  outline-offset: 2px;
+}
+
+/* Suppress outline on mouse click */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Form inputs keep border instead of outline */
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  border-color: var(--color-coral);
+}
+
+/* ============================================
    SCROLL REVEAL (base pattern)
    ============================================ */
 
@@ -425,5 +447,80 @@ body {
 @media (pointer: coarse) {
   .custom-cursor {
     display: none;
+  }
+}
+
+/* ============================================
+   TOUCH DEVICE POLISH
+   ============================================ */
+
+/* touch-action on interactive elements for faster taps */
+@media (pointer: coarse) {
+  a,
+  button,
+  [role='button'],
+  input,
+  textarea,
+  select {
+    touch-action: manipulation;
+  }
+
+  /* Disable hover effects that don't make sense on touch */
+  .card-hover:hover {
+    border-image: none;
+    transform: none;
+  }
+
+  /* Use active state instead of hover on touch */
+  .btn-primary:active {
+    transform: scale(0.97);
+  }
+
+  .btn-ghost:active {
+    border-color: var(--color-ivory);
+  }
+
+  .card-hover:active {
+    border-image: var(--gradient-heroes) 1;
+    transform: translateY(-3px);
+  }
+}
+
+/* ============================================
+   FOOTER LINK UNDERLINE DRAW
+   ============================================ */
+
+.footer-link {
+  position: relative;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-ivory);
+  transition: width 300ms var(--ease);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* ============================================
+   FEATURE CARD HOVER SCALE (desktop only)
+   ============================================ */
+
+@media (pointer: fine) {
+  .feature-card-hover {
+    transition:
+      border-color 400ms var(--ease),
+      transform 400ms var(--ease);
+  }
+
+  .feature-card-hover:hover {
+    transform: scale(1.02);
   }
 }

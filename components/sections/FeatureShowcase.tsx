@@ -20,6 +20,7 @@ export default function FeatureShowcase() {
   const t = useTranslations('Features');
   const sectionRef = useRef<HTMLElement>(null!);
   const phoneRef = useRef<HTMLDivElement>(null!);
+  const frameRef = useRef<HTMLDivElement>(null!);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const linesRef = useRef<(SVGLineElement | null)[]>([]);
 
@@ -42,6 +43,23 @@ export default function FeatureShowcase() {
             trigger: section,
             start: 'top 70%',
             once: true,
+          },
+        }
+      );
+
+      // Scroll-driven rotateY: -15° → 0° through section
+      gsap.fromTo(
+        phone,
+        { rotateY: -15, transformPerspective: 800 },
+        {
+          rotateY: 0,
+          transformPerspective: 800,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'bottom 20%',
+            scrub: true,
           },
         }
       );
@@ -86,18 +104,21 @@ export default function FeatureShowcase() {
       });
     }, section);
 
-    // Cursor tilt on desktop
+    // Cursor tilt on desktop — targets inner frame to avoid GSAP conflict
+    const frame = frameRef.current;
     const handleMouseMove = (e: MouseEvent) => {
-      const rect = phone.getBoundingClientRect();
+      if (!frame) return;
+      const rect = frame.getBoundingClientRect();
       const cx = rect.left + rect.width / 2;
       const cy = rect.top + rect.height / 2;
       const dx = (e.clientX - cx) / rect.width;
       const dy = (e.clientY - cy) / rect.height;
-      phone.style.transform = `perspective(800px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg)`;
+      frame.style.transform = `perspective(800px) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg)`;
     };
 
     const handleMouseLeave = () => {
-      phone.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
+      if (!frame) return;
+      frame.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg)';
     };
 
     const mql = window.matchMedia('(min-width: 768px)');
@@ -117,22 +138,24 @@ export default function FeatureShowcase() {
     <section
       ref={sectionRef}
       id="features"
+      aria-labelledby="features-title"
       className="relative min-h-screen bg-void px-6 py-20 md:px-10"
     >
       {/* Section header */}
       <div className="mx-auto max-w-7xl pb-12">
         <p className="text-label text-coral">{t('label')}</p>
-        <h2 className="text-section text-ivory mt-4">{t('title')}</h2>
+        <h2 id="features-title" className="text-section text-ivory mt-4">
+          {t('title')}
+        </h2>
       </div>
 
       <div className="relative mx-auto flex max-w-7xl flex-col items-center gap-12 md:flex-row md:gap-16">
         {/* Phone mockup */}
-        <div
-          ref={phoneRef}
-          className="relative flex-shrink-0 transition-transform duration-200"
-          style={{ opacity: 0 }}
-        >
-          <div className="phone-frame relative h-[420px] w-[200px] border border-border bg-carbon md:h-[520px] md:w-[250px]">
+        <div ref={phoneRef} className="relative flex-shrink-0" style={{ opacity: 0 }}>
+          <div
+            ref={frameRef}
+            className="phone-frame relative h-[420px] w-[200px] border border-border bg-carbon transition-transform duration-200 md:h-[520px] md:w-[250px]"
+          >
             <div className="phone-frame-inner absolute inset-2 overflow-hidden bg-void">
               {/* Placeholder screen content */}
               <div className="flex h-full flex-col items-center justify-center gap-3 p-4">
@@ -180,7 +203,7 @@ export default function FeatureShowcase() {
               ref={(el) => {
                 cardsRef.current[i] = el;
               }}
-              className="card group flex items-start gap-4 p-5 transition-colors duration-300 hover:border-coral/40"
+              className="card feature-card-hover group flex items-start gap-4 p-5 transition-colors duration-300 hover:border-coral/40"
               style={{ opacity: 0 }}
             >
               <span className="text-2xl" aria-hidden="true">
