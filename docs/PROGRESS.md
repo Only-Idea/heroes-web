@@ -152,14 +152,79 @@
 
 ### 7. Deploy skeleton to Vercel for continuous preview
 
-- [ ] Connect repository to Vercel
-- [ ] Configure build settings
-- [ ] Verify preview deployment
+- [x] Connect repository to Vercel
+- [x] Configure build settings
+- [x] Verify preview deployment
 
 ---
 
 ## Phase 2: 3D & Hero (Week 3–4)
-- [ ] Not started
+
+### 1. Install 3D dependencies (React Three Fiber + Drei + Three.js)
+- [x] Install `three`, `@react-three/fiber`, `@react-three/drei`
+- [x] Install `@types/three` as devDependency
+- [x] Verify build passes with new dependencies
+- [x] Create `components/three/` base structure
+
+### 2. Build Hero Orb scene with React Three Fiber
+- [x] Create `HeroOrb.tsx` component with R3F Canvas
+- [x] Inner core: IcosahedronGeometry (detail 2, radius 0.45), MeshBasicMaterial `#F2BE5E`
+- [x] Core glow: SphereGeometry (radius 0.7), custom ShaderMaterial with Fresnel glow, AdditiveBlending
+- [x] Wireframe shell: IcosahedronGeometry (detail 1, radius 1.4), wireframe 25% opacity
+- [x] Outer shell: IcosahedronGeometry (detail 0, radius 1.9), wireframe 8% opacity, counter-rotates
+- [x] Ambient particles: 400 points in spherical shell (radius 3–8), PointsMaterial 2% size, 50% opacity
+- [x] Lighting: AmbientLight `#E8E2D6` 0.3, PointLight coral 1.5, PointLight cool blue 0.8
+- [x] Canvas configured: transparent background, camera position, antialiasing
+
+### 3. Implement breathing animation + mouse parallax
+- [x] Breathing cycle: inner core opacity pulses 0.7–1.0 on 4s cycle
+- [x] Wireframe shell: independent X/Z axis rotation
+- [x] Outer shell: counter-rotation for depth parallax
+- [x] Particles: sine/cosine drift oscillation
+- [x] Mouse parallax: orb tilts toward cursor position
+- [x] Mobile fallback: gentle auto-rotate instead of mouse tracking
+- [x] `prefers-reduced-motion`: disable all orb animations
+
+### 4. Build Hero section with text, animations, and CTAs
+- [x] Full-viewport hero layout (100vh+) with 3D orb centered behind text
+- [x] Top label: 「バーチャルチャレンジ · 2026」 monospace, uppercase, 11px
+- [x] Main headline: gradient text fill, clamp 45–96px, weight 900
+- [x] Subtitle: 18px, dimmed ivory
+- [x] CTA buttons: gradient primary + ghost pill
+- [x] Scroll hint: 「Scroll」 with animated line at bottom
+- [x] Page load stagger sequence (0–1600ms per spec)
+- [x] Content pointer-events-through to 3D canvas
+- [x] Hero i18n translations added (ja + en)
+
+### 5. Implement hero scroll-away effects
+- [x] Past 50vh: content fades out (opacity 1→0, translateY 0→-40px)
+- [x] Orb scales 1.0→0.85 on scroll past hero
+- [x] Wireframe opacity decreases past hero ("dissolving" effect)
+- [x] Particles drift outward past hero
+- [x] GSAP ScrollTrigger integration for all hero scroll effects
+
+### 6. Build medal placeholder scene (procedural cylinder)
+- [x] Create `MedalScene.tsx` component
+- [x] CylinderGeometry (radius 1.2, height 0.15, segments 64)
+- [x] TorusGeometry rim edge (radius 1.2, tube 0.04)
+- [x] MeshStandardMaterial: metalness 0.85, roughness 0.15, color `#D4A84B`
+- [x] Heroes gradient as environment map reflection
+- [x] Gentle float: Y-axis oscillation (amplitude 0.1, period 3s)
+
+### 7. Set up ScrollTrigger integration for 3D scenes
+- [x] GSAP ScrollTrigger `scrub: true` for medal rotation (80°→0°)
+- [x] Medal scale 0.8→1.0 on scroll
+- [x] Medal text fade-in at appropriate scroll position
+- [x] Shared scroll-state module for R3F ↔ GSAP communication
+- [x] ScrollTrigger properly synced with Lenis (via SmoothScroll component)
+
+### 8. WebGL fallback for devices without GPU support
+- [x] Detect WebGL support (canvas.getContext check)
+- [x] Fallback: static gradient background + CSS animations instead of 3D
+- [x] Mobile optimizations: reduce particles 400→100
+- [x] Mobile DPR capped at 1.5, antialiasing disabled
+- [x] Shared `lib/webgl.ts` utility for WebGL + mobile detection
+- [x] Build passes, TypeScript + ESLint + Prettier all pass
 
 ## Phase 3: Content Sections (Week 5–6)
 - [ ] Not started

@@ -282,6 +282,101 @@ body {
 }
 
 /* ============================================
+   HERO LOAD STAGGER ANIMATION
+   ============================================ */
+
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-scale-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes hero-orb-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scroll-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  50.01% {
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+
+.hero-stagger {
+  opacity: 0;
+  animation: hero-fade-up 0.6s var(--ease) forwards;
+}
+
+.hero-stagger-label {
+  animation-delay: 400ms;
+}
+
+.hero-stagger-title-1 {
+  animation-delay: 600ms;
+}
+
+.hero-stagger-title-2 {
+  animation-delay: 750ms;
+}
+
+.hero-stagger-subtitle {
+  animation-delay: 1000ms;
+}
+
+.hero-stagger-cta {
+  opacity: 0;
+  animation: hero-scale-in 0.6s var(--ease) forwards;
+  animation-delay: 1200ms;
+}
+
+.hero-stagger-orb {
+  opacity: 0;
+  animation: hero-orb-in 0.8s var(--ease) forwards;
+  animation-delay: 1400ms;
+}
+
+.hero-stagger-scroll {
+  animation-delay: 1600ms;
+}
+
+.hero-scroll-line {
+  animation: scroll-line 2s var(--ease) infinite;
+  animation-delay: 2.4s;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 
