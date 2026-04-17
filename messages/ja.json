@@ -1,0 +1,29 @@
+{
+  "Meta": {
+    "title": "Heroes — バーチャルチャレンジ",
+    "description": "すべての一歩が、冒険になる。富士山、四十七士、日本の鉄道。歩くほど、世界が変わる。"
+  },
+  "Nav": {
+    "logo": "Heroes",
+    "challenges": "チャレンジ",
+    "features": "機能",
+    "impact": "インパクト",
+    "contact": "お問い合わせ",
+    "download": "ダウンロード"
+  },
+  "Hero": {
+    "label": "バーチャルチャレンジ · 2026",
+    "titleLine1": "すべての一歩が、",
+    "titleLine2": "冒険になる。",
+    "subtitle": "富士山、四十七士、日本の鉄道。歩くほど、世界が変わる。",
+    "ctaPrimary": "App Storeでダウンロード",
+    "ctaSecondary": "もっと知る",
+    "scroll": "Scroll"
+  },
+  "Footer": {
+    "privacy": "プライバシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ",
+    "copyright": "© 2026 Heroes Inc."
+  }
+}

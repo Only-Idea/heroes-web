@@ -1,0 +1,29 @@
+{
+  "Meta": {
+    "title": "Heroes — Virtual Challenge",
+    "description": "Every step becomes an adventure. Mt. Fuji, the 47 Ronin, Japanese Railways. The more you move, the more the world changes."
+  },
+  "Nav": {
+    "logo": "Heroes",
+    "challenges": "Challenges",
+    "features": "Features",
+    "impact": "Impact",
+    "contact": "Contact",
+    "download": "Download"
+  },
+  "Hero": {
+    "label": "Virtual Challenge · 2026",
+    "titleLine1": "Every step becomes",
+    "titleLine2": "an adventure.",
+    "subtitle": "Mt. Fuji, the 47 Ronin, Japanese Railways. The more you move, the more the world changes.",
+    "ctaPrimary": "Download on App Store",
+    "ctaSecondary": "Learn More",
+    "scroll": "Scroll"
+  },
+  "Footer": {
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "contact": "Contact",
+    "copyright": "© 2026 Heroes Inc."
+  }
+}

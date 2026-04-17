@@ -1,0 +1,334 @@
+@import 'tailwindcss';
+
+/* ============================================
+   HEROES DESIGN SYSTEM — Tailwind CSS v4 Theme
+   ============================================ */
+
+@theme inline {
+  /* ---- Brand Colors: Primary Gradient ---- */
+  --color-coral: #ec7a5c;
+  --color-amber: #f2be5e;
+  --color-teal: #375e65;
+
+  /* ---- Backgrounds ---- */
+  --color-void: #0f1114;
+  --color-carbon: #181b21;
+  --color-slate: #1e2128;
+
+  /* ---- Text & UI ---- */
+  --color-ivory: #e8e2d6;
+  --color-stone: #a0998a;
+  --color-ash: #5a5550;
+  --color-border: #2a2e35;
+
+  /* ---- Spacing System ---- */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 32px;
+  --spacing-xl: 64px;
+  --spacing-2xl: 128px;
+  --spacing-3xl: 200px;
+
+  /* ---- Border Radius ---- */
+  --radius-sm: 8px;
+  --radius-card: 20px;
+  --radius-phone-inner: 34px;
+  --radius-phone: 44px;
+  --radius-pill: 999px;
+
+  /* ---- Font Families ---- */
+  --font-display:
+    -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    var(--font-noto-sans-jp), 'Noto Sans JP', 'Yu Gothic', 'Segoe UI', sans-serif;
+  --font-body: var(--font-display);
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Noto Sans JP', monospace;
+
+  /* ---- Font Sizes (Type Scale) ---- */
+  --text-hero: clamp(2.8125rem, 8vw, 6rem);
+  --text-hero--line-height: 1.15;
+  --text-hero--letter-spacing: 0.02em;
+
+  --text-section: clamp(2rem, 4.5vw, 3.75rem);
+  --text-section--line-height: 1.2;
+  --text-section--letter-spacing: 0.01em;
+
+  --text-challenge: 1.75rem;
+  --text-challenge--line-height: 1.2;
+  --text-challenge--letter-spacing: 0.08em;
+
+  --text-stat: clamp(2.8125rem, 5vw, 4.5rem);
+  --text-stat--line-height: 1;
+  --text-stat--letter-spacing: 0em;
+
+  --text-body-lg: 1.0625rem;
+  --text-body-lg--line-height: 1.59;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.59;
+
+  --text-nav: 0.8125rem;
+  --text-nav--line-height: 1;
+  --text-nav--letter-spacing: 0.06em;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.25em;
+
+  --text-btn: 0.75rem;
+  --text-btn--line-height: 1;
+  --text-btn--letter-spacing: 0.1em;
+
+  --text-footer: 0.6875rem;
+  --text-footer--line-height: 1.4;
+  --text-footer--letter-spacing: 0.08em;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+:root {
+  --ease: cubic-bezier(0.65, 0, 0.35, 1);
+  --gradient-heroes: linear-gradient(135deg, #375e65 0%, #f2be5e 50%, #ec7a5c 100%);
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-ivory);
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: 1.0625rem;
+  line-height: 1.59;
+}
+
+/* ============================================
+   TYPOGRAPHY UTILITIES
+   ============================================ */
+
+/* Hero title — weight 900 */
+.text-hero {
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+/* Section title — weight 700 */
+.text-section {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* Challenge name — weight 700 */
+.text-challenge {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* Stat number — weight 700 */
+.text-stat {
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+
+/* Section label — mono, weight 500, uppercase */
+.text-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Button text — mono, weight 500 */
+.text-btn {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+/* Nav link — weight 400 */
+.text-nav {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+/* Footer — mono, weight 400 */
+.text-footer {
+  font-family: var(--font-mono);
+  font-weight: 400;
+}
+
+/* Body large — weight 300 */
+.text-body-lg {
+  font-weight: 300;
+}
+
+/* ============================================
+   GRADIENT UTILITIES
+   ============================================ */
+
+/* Gradient background for CTAs */
+.bg-heroes-gradient {
+  background: var(--gradient-heroes);
+}
+
+/* Gradient text fill (hero headline, section numbers) */
+.text-heroes-gradient {
+  background: var(--gradient-heroes);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient border (1px divider between sections) */
+.border-heroes-gradient {
+  border-image: var(--gradient-heroes) 1;
+}
+
+/* Gradient hover — 20% brighter shift */
+.bg-heroes-gradient-hover {
+  background: linear-gradient(135deg, #4a7a82 0%, #f5cc7a 50%, #f09474 100%);
+}
+
+/* ============================================
+   COMPONENT PATTERNS
+   ============================================ */
+
+/* Card base */
+.card {
+  background-color: var(--color-carbon);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+
+/* Card hover — gradient border */
+.card-hover {
+  transition:
+    border-color 500ms var(--ease),
+    transform 500ms var(--ease);
+}
+.card-hover:hover {
+  border-image: var(--gradient-heroes) 1;
+  transform: translateY(-6px);
+}
+
+/* Primary button (pill, gradient) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-heroes);
+  color: var(--color-void);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 14px 32px;
+  transition:
+    background 400ms var(--ease),
+    transform 400ms var(--ease),
+    box-shadow 400ms var(--ease);
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #4a7a82 0%, #f5cc7a 50%, #f09474 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 24px rgba(236, 122, 92, 0.3);
+}
+
+/* Ghost button (pill, border) */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: var(--color-ivory);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  padding: 14px 32px;
+  transition: border-color 300ms var(--ease);
+}
+.btn-ghost:hover {
+  border-color: var(--color-ivory);
+}
+
+/* Phone frame */
+.phone-frame {
+  border-radius: var(--radius-phone);
+  aspect-ratio: 9 / 19.5;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+}
+.phone-frame-inner {
+  border-radius: var(--radius-phone-inner);
+}
+
+/* ============================================
+   SCROLL REVEAL (base pattern)
+   ============================================ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 1s var(--ease),
+    transform 1s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   MOBILE TYPE SCALE OVERRIDES
+   ============================================ */
+
+@media (max-width: 767px) {
+  body {
+    font-size: 0.9375rem;
+  }
+}
+
+/* ============================================
+   CUSTOM CURSOR (desktop only)
+   ============================================ */
+
+@media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  [role='button'] {
+    cursor: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+}
