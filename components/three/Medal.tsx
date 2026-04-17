@@ -69,19 +69,19 @@ export default function Medal() {
       <MedalDisc />
 
       {/* Lighting */}
-      <ambientLight color="#E8E2D6" intensity={0.4} />
+      <ambientLight color="#F2EEE4" intensity={0.4} />
       <directionalLight position={[3, 3, 5]} color="#F0A07C" intensity={1.2} />
       <directionalLight position={[-3, -1, 3]} color="#8AB4D4" intensity={0.6} />
-      <pointLight position={[0, 2, 3]} color="#F2BE5E" intensity={0.8} />
+      <pointLight position={[0, 2, 3]} color="#F5CA72" intensity={0.8} />
 
       {/* Environment reflection using Heroes gradient colors */}
       <Environment background={false} environmentIntensity={0.5} files={undefined}>
         <mesh scale={50}>
           <sphereGeometry />
-          <meshBasicMaterial color="#375E65" side={THREE.BackSide} />
+          <meshBasicMaterial color="#3F7680" side={THREE.BackSide} />
         </mesh>
-        <directionalLight position={[5, 5, 5]} color="#F2BE5E" intensity={0.3} />
-        <directionalLight position={[-5, 3, -5]} color="#EC7A5C" intensity={0.2} />
+        <directionalLight position={[5, 5, 5]} color="#F5CA72" intensity={0.3} />
+        <directionalLight position={[-5, 3, -5]} color="#F08870" intensity={0.2} />
       </Environment>
     </group>
   );

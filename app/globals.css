@@ -6,20 +6,20 @@
 
 @theme inline {
   /* ---- Brand Colors: Primary Gradient ---- */
-  --color-coral: #ec7a5c;
-  --color-amber: #f2be5e;
-  --color-teal: #375e65;
+  --color-coral: #f08870;
+  --color-amber: #f5ca72;
+  --color-teal: #3f7680;
 
   /* ---- Backgrounds ---- */
-  --color-void: #0f1114;
-  --color-carbon: #181b21;
-  --color-slate: #1e2128;
+  --color-void: #13171e;
+  --color-carbon: #1c2230;
+  --color-slate: #252d3c;
 
   /* ---- Text & UI ---- */
-  --color-ivory: #e8e2d6;
-  --color-stone: #a0998a;
-  --color-ash: #5a5550;
-  --color-border: #2a2e35;
+  --color-ivory: #f2eee4;
+  --color-stone: #b5afa2;
+  --color-ash: #706b63;
+  --color-border: #333a48;
 
   /* ---- Border Radius ---- */
   --radius-sm: 8px;
@@ -81,7 +81,7 @@
 
 :root {
   --ease: cubic-bezier(0.65, 0, 0.35, 1);
-  --gradient-heroes: linear-gradient(135deg, #375e65 0%, #f2be5e 50%, #ec7a5c 100%);
+  --gradient-heroes: linear-gradient(135deg, #3f7680 0%, #f5ca72 50%, #f08870 100%);
 }
 
 body {
@@ -175,7 +175,7 @@ body {
 
 /* Gradient hover — 20% brighter shift */
 .bg-heroes-gradient-hover {
-  background: linear-gradient(135deg, #4a7a82 0%, #f5cc7a 50%, #f09474 100%);
+  background: linear-gradient(135deg, #4e8e98 0%, #f8d48a 50%, #f4a088 100%);
 }
 
 /* ============================================
@@ -220,7 +220,7 @@ body {
     box-shadow 400ms var(--ease);
 }
 .btn-primary:hover {
-  background: linear-gradient(135deg, #4a7a82 0%, #f5cc7a 50%, #f09474 100%);
+  background: linear-gradient(135deg, #4e8e98 0%, #f8d48a 50%, #f4a088 100%);
   transform: translateY(-2px);
   box-shadow: 0 4px 24px rgba(236, 122, 92, 0.3);
 }

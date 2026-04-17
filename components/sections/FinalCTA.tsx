@@ -109,7 +109,7 @@ export default function FinalCTA() {
         className="pointer-events-none absolute inset-0 opacity-20"
         style={{
           background:
-            'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(55, 94, 101, 0.4) 0%, transparent 70%)',
+            'radial-gradient(ellipse 60% 40% at 50% 50%, rgba(63, 118, 128, 0.4) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />

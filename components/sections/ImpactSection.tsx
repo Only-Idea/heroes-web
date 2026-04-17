@@ -135,8 +135,8 @@ export default function ImpactSection() {
                         j % 3 === 0
                           ? 'var(--color-teal)'
                           : j % 3 === 1
-                            ? 'rgba(55, 94, 101, 0.7)'
-                            : 'rgba(55, 94, 101, 0.4)',
+                            ? 'rgba(63, 118, 128, 0.7)'
+                            : 'rgba(63, 118, 128, 0.4)',
                     }}
                   />
                 ))}
@@ -151,11 +151,11 @@ export default function ImpactSection() {
             <svg viewBox="0 0 300 60" className="w-full" aria-hidden="true">
               <path
                 d="M0 30 Q25 10 50 30 T100 30 T150 30 T200 30 T250 30 T300 30 V60 H0 Z"
-                fill="rgba(55, 94, 101, 0.2)"
+                fill="rgba(63, 118, 128, 0.2)"
               />
               <path
                 d="M0 35 Q25 20 50 35 T100 35 T150 35 T200 35 T250 35 T300 35 V60 H0 Z"
-                fill="rgba(55, 94, 101, 0.1)"
+                fill="rgba(63, 118, 128, 0.1)"
               />
             </svg>
           </div>

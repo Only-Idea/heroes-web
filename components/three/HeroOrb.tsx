@@ -76,7 +76,7 @@ function InnerCore() {
   return (
     <mesh ref={ref}>
       <icosahedronGeometry args={[0.45, 2]} />
-      <meshBasicMaterial color="#F2BE5E" transparent opacity={0.85} />
+      <meshBasicMaterial color="#F5CA72" transparent opacity={0.85} />
     </mesh>
   );
 }
@@ -98,9 +98,9 @@ function CoreGlow() {
         vertexShader={fresnelVertexShader}
         fragmentShader={fresnelFragmentShader}
         uniforms={{
-          color1: { value: new THREE.Color('#375E65') },
-          color2: { value: new THREE.Color('#F2BE5E') },
-          color3: { value: new THREE.Color('#EC7A5C') },
+          color1: { value: new THREE.Color('#3F7680') },
+          color2: { value: new THREE.Color('#F5CA72') },
+          color3: { value: new THREE.Color('#F08870') },
           opacity: { value: 1.0 },
         }}
         transparent
@@ -128,7 +128,7 @@ function WireframeShell() {
   return (
     <mesh ref={ref}>
       <icosahedronGeometry args={[1.4, 1]} />
-      <meshBasicMaterial color="#E8E2D6" wireframe transparent opacity={0.25} />
+      <meshBasicMaterial color="#F2EEE4" wireframe transparent opacity={0.25} />
     </mesh>
   );
 }
@@ -149,7 +149,7 @@ function OuterShell() {
   return (
     <mesh ref={ref}>
       <icosahedronGeometry args={[1.9, 0]} />
-      <meshBasicMaterial color="#E8E2D6" wireframe transparent opacity={0.08} />
+      <meshBasicMaterial color="#F2EEE4" wireframe transparent opacity={0.08} />
     </mesh>
   );
 }
@@ -183,7 +183,7 @@ function Particles() {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" args={[positions, 3]} />
       </bufferGeometry>
-      <pointsMaterial color="#E8E2D6" size={0.02} transparent opacity={0.5} sizeAttenuation />
+      <pointsMaterial color="#F2EEE4" size={0.02} transparent opacity={0.5} sizeAttenuation />
     </points>
   );
 }
@@ -222,7 +222,7 @@ export default function HeroOrb() {
       <OuterShell />
       <Particles />
 
-      <ambientLight color="#E8E2D6" intensity={0.3} />
+      <ambientLight color="#F2EEE4" intensity={0.3} />
       <pointLight position={[3, 2, 4]} color="#F0A07C" intensity={1.5} />
       <pointLight position={[-4, -2, 2]} color="#8AB4D4" intensity={0.8} />
     </group>
