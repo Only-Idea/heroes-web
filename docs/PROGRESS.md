@@ -227,7 +227,87 @@
 - [x] Build passes, TypeScript + ESLint + Prettier all pass
 
 ## Phase 3: Content Sections (Week 5–6)
-- [ ] Not started
+
+### 1. Build Stats Bar with animated counters
+- [x] Create `StatsBar.tsx` section component
+- [x] 1px gradient border top and bottom
+- [x] Three stat items: 「3」チャレンジルート / 「12」アクティビティタイプ / 「32+」対応国
+- [x] Animated count-up from 0 on scroll enter (GSAP/ScrollTrigger)
+- [x] 200ms stagger between each counter
+- [x] `text-stat` typography (clamp 45–72px, weight 700)
+- [x] i18n translations (ja + en)
+
+### 2. Build Challenge Showcase with horizontal scroll on desktop
+- [x] Create `ChallengeShowcase.tsx` section component
+- [x] Three challenge cards: 富士山 / 浪人 / 鉄道
+- [x] Card layout: placeholder image/gradient, challenge name (bold 700), description, CTA
+- [x] Desktop: horizontal scroll with GSAP ScrollTrigger pin
+- [x] Cards slide in from right (translateX: 100px→0) with stagger
+- [x] Mobile: stack vertically with staggered entrance
+- [x] `.card` + `.card-hover` design system classes
+- [x] i18n translations (ja + en)
+
+### 3. Build Medal Showcase with scroll-driven rotation
+- [x] Create `MedalShowcase.tsx` section component
+- [x] Integrate `MedalScene` 3D component (center viewport, ~400×400px)
+- [x] Label: 「本物を手に入れる」 monospace, uppercase
+- [x] Headline: 「デジタルバッジではない。本物のメダルを。」
+- [x] Supporting copy about premium medals shipped worldwide
+- [x] GSAP ScrollTrigger `scrub: true` driving `medalScroll.progress`
+- [x] Medal text fades in at appropriate scroll position
+- [x] i18n translations (ja + en)
+
+### 4. Build Feature Showcase with phone mockup and annotation lines
+- [x] Create `FeatureShowcase.tsx` section component
+- [x] Phone mockup frame (CSS perspective, `.phone-frame` class)
+- [x] Cursor tilt on desktop (CSS transform), gyroscope on mobile
+- [x] 6 feature cards: マップ / トラッキング / チーム / アチーブメント / ストリーク / フィード
+- [x] Feature cards fade in with 150ms stagger on scroll
+- [x] Desktop: 「アプリ機能」 pill badge + dotted SVG annotation line to phone
+- [x] Mobile: badge inline, phone-frame border on card
+- [x] Phone mockup floats in from bottom on scroll enter
+- [x] i18n translations (ja + en)
+
+### 5. Build Environmental Impact section with animated illustrations
+- [x] Create `ImpactSection.tsx` section component
+- [x] Split layout: illustration left, text right
+- [x] Tree Care and Clean Ocean initiative descriptions
+- [x] Animated counter: number of trees planted (placeholder value 12,480)
+- [x] Left/right slide-in from opposing sides on scroll
+- [x] Placeholder illustration (CSS/SVG animated tree rows + ocean waves)
+- [x] i18n translations (ja + en)
+
+### 6. Build Activity Types horizontal ribbon
+- [x] Create `ActivityTypes.tsx` section component
+- [x] 9 activity type items with icons and labels
+- [x] ステップ / ランニング / ウォーキング / サイクリング / 水泳 / ローイング / エリプティカル / スキー / 車いす
+- [x] Infinite horizontal scroll animation (GSAP infinite loop)
+- [x] Fade edges on left/right for seamless visual
+- [x] Section header: 「自分のペースで動く」 with fade-in
+- [x] i18n translations (ja + en)
+
+### 7. Build Final CTA section
+- [x] Create `FinalCTA.tsx` section component
+- [x] Headline: 「あなたの冒険を始めよう。」 with fade-up on scroll
+- [x] Subtitle: 「今すぐダウンロードして、最初の一歩を踏み出そう。」
+- [x] App Store (btn-primary) and Google Play (btn-ghost) buttons with scale-in animation
+- [x] Device mockup placeholders (iOS + Android side by side, phone-frame class)
+- [x] Radial gradient glow background accent
+- [x] Staggered GSAP ScrollTrigger animations (headline → subtitle → buttons → mockups)
+- [x] i18n translations (ja + en) — CTA namespace
+
+### 8. Build Contact form and Footer integration
+- [x] Create `ContactSection.tsx` section component
+- [x] Form fields: お名前 / メール / メッセージ (dark bg-void, border-border styling)
+- [x] Client-side form validation (name required, email regex, message required)
+- [x] Validation error messages from i18n translations
+- [x] Success state with thank-you message after submission
+- [x] Footer already exists in layout — ContactSection sits directly above it
+- [x] Form fields stagger fade-in on scroll enter (100ms stagger)
+- [x] Focus state: border transitions to coral/60
+- [x] `id="contact"` for nav anchor linking
+- [x] i18n translations (ja + en) — Contact namespace
+- [x] Build passes (2.6s), TypeScript + ESLint + Prettier all pass
 
 ## Phase 4: Polish & Responsive (Week 7–8)
 - [ ] Not started

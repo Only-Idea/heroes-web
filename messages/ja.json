@@ -20,6 +20,88 @@
     "ctaSecondary": "もっと知る",
     "scroll": "Scroll"
   },
+  "Stats": {
+    "routes": "チャレンジルート",
+    "activities": "アクティビティタイプ",
+    "countries": "対応国"
+  },
+  "Challenges": {
+    "label": "チャレンジルート",
+    "title": "一歩ずつ日本を探検",
+    "fuji": "富士山",
+    "fujiDesc": "吉田ルートから山頂へ。実在する山小屋をランドマークに、日本最高峰への挑戦。",
+    "ronin": "浪人",
+    "roninDesc": "四十七士の忠義の道。歴史的に重要な場所を巡る、文化と名誉の旅。",
+    "railway": "鉄道",
+    "railwayDesc": "日本の名路線を走破。実在する駅をランドマークに、鉄道の旅を体験。",
+    "cta": "チャレンジを見る"
+  },
+  "Medal": {
+    "label": "本物を手に入れる",
+    "title": "デジタルバッジではない。本物のメダルを。",
+    "description": "チャレンジを100%達成すると、世界中どこへでもオリジナルパッケージで届くプレミアムメダルを獲得。デジタルではなく、手に取れる本物の証。"
+  },
+  "Features": {
+    "label": "アプリ機能",
+    "title": "冒険をもっと楽しく",
+    "map": "インタラクティブマップ",
+    "mapDesc": "Mapboxの3つのスタイルで、チャレンジルートをリアルタイムに確認。",
+    "tracking": "リアルタイムトラッキング",
+    "trackingDesc": "参加者の位置をマップ上でリアルタイムに追跡。",
+    "team": "チーム機能",
+    "teamDesc": "リアルタイムチャットとリーダーボードで仲間と一緒に挑戦。",
+    "achievements": "アチーブメント",
+    "achievementsDesc": "10カテゴリ、5つのレアリティ。コモンからレジェンダリーまで。",
+    "streaks": "ストリーク",
+    "streaksDesc": "連続アクティビティ日数を記録して、モチベーションを維持。",
+    "feed": "コミュニティフィード",
+    "feedDesc": "投稿、いいね、コメントで仲間とつながる。"
+  },
+  "Impact": {
+    "label": "すべての一歩にインパクトを",
+    "title": "歩くほど、世界が変わる。",
+    "treeTitle": "Tree Care — 植樹",
+    "treeDesc": "森のプロジェクトと連携し、認定された植林プログラムを通じて実際の木を植樹。あなたの一歩が森をつくる。",
+    "oceanTitle": "Clean Ocean — 海洋浄化",
+    "oceanDesc": "海洋パートナーと共にプラスチック汚染の削減に貢献。冒険しながら、海を守る。",
+    "treesPlanted": "本の木を植樹",
+    "counterLabel": "これまでの実績"
+  },
+  "Activities": {
+    "label": "アクティビティタイプ",
+    "title": "自分のペースで動く",
+    "step": "ステップ",
+    "running": "ランニング",
+    "walking": "ウォーキング",
+    "cycling": "サイクリング",
+    "swimming": "水泳",
+    "rowing": "ローイング",
+    "elliptical": "エリプティカル",
+    "skiing": "スキー",
+    "wheelchair": "車いす"
+  },
+  "CTA": {
+    "title": "あなたの冒険を始めよう。",
+    "subtitle": "今すぐダウンロードして、最初の一歩を踏み出そう。",
+    "appStore": "App Storeでダウンロード",
+    "googlePlay": "Google Playで手に入れよう"
+  },
+  "Contact": {
+    "label": "お問い合わせ",
+    "title": "メッセージを送る",
+    "name": "お名前",
+    "namePlaceholder": "山田 太郎",
+    "email": "メールアドレス",
+    "emailPlaceholder": "you@example.com",
+    "message": "メッセージ",
+    "messagePlaceholder": "お気軽にお問い合わせください。",
+    "send": "送信する",
+    "sending": "送信中...",
+    "success": "送信しました。ありがとうございます！",
+    "errorName": "お名前を入力してください。",
+    "errorEmail": "有効なメールアドレスを入力してください。",
+    "errorMessage": "メッセージを入力してください。"
+  },
   "Footer": {
     "privacy": "プライバシー",
     "terms": "利用規約",

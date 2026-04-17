@@ -20,6 +20,88 @@
     "ctaSecondary": "Learn More",
     "scroll": "Scroll"
   },
+  "Stats": {
+    "routes": "Challenge Routes",
+    "activities": "Activity Types",
+    "countries": "Countries Supported"
+  },
+  "Challenges": {
+    "label": "Challenge Routes",
+    "title": "Explore Japan, step by step",
+    "fuji": "Fujisan",
+    "fujiDesc": "Climb to the summit via the Yoshida trail, with real mountain hut landmarks along the way.",
+    "ronin": "Ronin",
+    "roninDesc": "Walk the path of the 47 Ronin through historically significant locations of loyalty and honor.",
+    "railway": "Railway",
+    "railwayDesc": "Ride Japan's famous rail lines, with real train stations as landmarks on your journey.",
+    "cta": "Explore Challenge"
+  },
+  "Medal": {
+    "label": "Earn something real",
+    "title": "Not a digital badge. A real medal.",
+    "description": "Complete a challenge 100% and receive a premium medal shipped worldwide in original packaging. Not digital — something you can hold in your hands."
+  },
+  "Features": {
+    "label": "App Features",
+    "title": "Make your adventure more fun",
+    "map": "Interactive Map",
+    "mapDesc": "View your challenge route in real time with 3 Mapbox styles.",
+    "tracking": "Real-time Tracking",
+    "trackingDesc": "Track participants on the map in real time.",
+    "team": "Team Features",
+    "teamDesc": "Challenge together with real-time chat and leaderboards.",
+    "achievements": "Achievements",
+    "achievementsDesc": "10 categories, 5 rarities — from Common to Legendary.",
+    "streaks": "Streaks",
+    "streaksDesc": "Track consecutive activity days to stay motivated.",
+    "feed": "Community Feed",
+    "feedDesc": "Connect with fellow adventurers through posts, likes, and comments."
+  },
+  "Impact": {
+    "label": "Every step makes an impact",
+    "title": "The more you move, the more the world changes.",
+    "treeTitle": "Tree Care — Planting",
+    "treeDesc": "Partnering with forest projects to plant real trees through certified reforestation programs. Your steps build forests.",
+    "oceanTitle": "Clean Ocean — Ocean Cleanup",
+    "oceanDesc": "Working with ocean partners to reduce plastic pollution. Adventure while protecting our seas.",
+    "treesPlanted": "trees planted",
+    "counterLabel": "Our impact so far"
+  },
+  "Activities": {
+    "label": "Activity Types",
+    "title": "Move at your own pace",
+    "step": "Steps",
+    "running": "Running",
+    "walking": "Walking",
+    "cycling": "Cycling",
+    "swimming": "Swimming",
+    "rowing": "Rowing",
+    "elliptical": "Elliptical",
+    "skiing": "Skiing",
+    "wheelchair": "Wheelchair"
+  },
+  "CTA": {
+    "title": "Start your adventure.",
+    "subtitle": "Download now and take the first step.",
+    "appStore": "Download on App Store",
+    "googlePlay": "Get it on Google Play"
+  },
+  "Contact": {
+    "label": "Contact",
+    "title": "Send us a message",
+    "name": "Name",
+    "namePlaceholder": "John Doe",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "We'd love to hear from you.",
+    "send": "Send",
+    "sending": "Sending...",
+    "success": "Sent! Thank you for reaching out.",
+    "errorName": "Please enter your name.",
+    "errorEmail": "Please enter a valid email address.",
+    "errorMessage": "Please enter a message."
+  },
   "Footer": {
     "privacy": "Privacy",
     "terms": "Terms",
